@@ -12,7 +12,7 @@ uint16_t CalculateBaudRate(uint32_t bps);
 /* Main - a simple test program*/
 int main( void )
 {
-	USART0_Init( 250000 ); /* Set the baudrate to 19,200 bps using a 3.6864MHz crystal */
+	USART0_Init( 250000 ); 
 
 	for(;;) 	    /* Forever */
 	{
@@ -29,21 +29,6 @@ void USART_putstring(char* StringPtr){
 	StringPtr++;}        //We increment the pointer so we can read the next char
 	
 }
-
-/* Initialize UART */
-//void USART0_Init( unsigned int baudrate )
-//{
-	///* Set the baud rate */
-	//UBRR0H = (unsigned char) (baudrate>>8);
-	//UBRR0L = (unsigned char) baudrate;
-	//
-	///* Enable UART receiver and transmitter */
-	//UCSR0B = ( ( 1 << RXEN0 ) | ( 1 << TXEN0 ) );
-	//
-	///* Set frame format: 8 data 2stop */
-	//UCSR0C = (1<<USBS0)|(1<<UCSZ01)|(1<<UCSZ00);              //For devices with Extended IO
-	////UCSR0C = (1<<URSEL)|(1<<USBS0)|(1<<UCSZ01)|(1<<UCSZ00);   //For devices without Extended IO
-//}
 
 void USART0_Init(uint32_t baud){
 	
