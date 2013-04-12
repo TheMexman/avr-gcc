@@ -84,6 +84,7 @@ void USART1_Init(uint32_t baud){
 uint16_t CalculateBaudRate(uint32_t baud){
 	
 	//Calculate UBBR
+	//TODO modifiy to use 8* or 4* depending on doublespeed or async
 	return (F_CPU/(16*baud)) - 1;
 }
 
@@ -91,7 +92,7 @@ uint16_t CalculateBaudRate(uint32_t baud){
 /* Read and write functions */
 unsigned char USART0_Receive( void )
 {
-	/* Wait for incomming data */
+	/* Wait for incoming data */
 	while ( !(UCSR0A & (1<<RXC0)) )
 	;
 	/* Return the data */
@@ -100,7 +101,7 @@ unsigned char USART0_Receive( void )
 
 unsigned char USART1_Receive( void )
 {
-	/* Wait for incomming data */
+	/* Wait for incoming data */
 	while ( !(UCSR1A & (1<<RXC1)) )
 	;
 	/* Return the data */
