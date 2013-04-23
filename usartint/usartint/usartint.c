@@ -1,8 +1,5 @@
 /*
  * usartint.c
- *
- * Created: 4/22/2013 11:23:56 PM
- *  Author: Tony Flores
  */ 
 
 //Defines
